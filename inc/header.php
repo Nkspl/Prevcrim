@@ -20,15 +20,16 @@
     <button id="btnToggleSidebar">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <!-- HOME / Dashboard -->
+    <!-- HOME (inicio) / Dashboard -->
     <a href="/dashboard.php" class="home-btn">PREVCRIM</a>
   </div>
   <div class="user-info">
     <?php if (!empty($_SESSION['nombre'])): ?>
        <!-- mostrar el nombre del usuario que inicio sesion en el encabezado-->
-      <?php echo htmlspecialchars($_SESSION['nombre']); ?> |
+      <?php echo htmlspecialchars($_SESSION['nombre']); ?> 
       <a href="logout.php" class="logout-btn">
-        <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="logout-text">Cerrar Sesión</span>
       </a>
     <?php endif; ?>
   </div>

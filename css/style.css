@@ -13,7 +13,7 @@
     color: #333;
   }
   
-  /* Header */
+  /* Header (Encabezado) */
   header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -45,7 +45,7 @@
  /*color y posicion del nombre de usuario en el encabezado*/
   .user-info {
     margin-left: auto;
-    color: #050505;
+    color: #f4f1f1;
   }
 
 /* Icono en el link de Cerrar Sesión */
@@ -54,6 +54,7 @@
   align-items: center;
   color: #fff;               /* mismo color que el header */
   text-decoration: none;     /* quita subrayado */
+  margin-left: 40px; /* Alejar o acercar un pocoel nombre de usuario al boton cerrar sesion */
 }
 
 .user-info .logout-btn i {
@@ -63,19 +64,30 @@
 
 /* Hover para que se vea interactivo */
 .user-info .logout-btn:hover {
-  color: #c4c3c3;
+  color: #f6f4f4;
+}
+
+/*SEGUNDA OPCION */
+/* Oculta el texto de logout (cerrar sesion) por defecto */
+.logout-btn .logout-text {
+  display: none;
+  margin-left: 5px;       /* espacio entre icono y texto */
+  white-space: nowrap;    /* evitar que el texto se parta en varias líneas */
+}
+
+/* Al hacer hover sobre el enlace, muestra el texto */
+.logout-btn:hover .logout-text {
+  display: inline-block;
+}
+
+/* cambia el color de icono/texto al hover */
+.logout-btn:hover {
+  color: #f6f4f4;
 }
 
 
 
-
-
-
-
-
-
-  
-  /* Sidebar */
+  /* Sidebar (Menu "Barra lateral") */
   #sidebar {
     position: fixed;
     top: 60px; left: 0; bottom: 0;
@@ -90,7 +102,7 @@
   #sidebar button {
     display: flex;                   /* flex para icono + texto */
     align-items: center;         /* verticalmente centrado */
-    justify-content: left;    /* horizontalmente centrado */
+    justify-content: left;    /* horizontalmente a la izquierda */
     width: 100%;
     margin: 0px auto;
     padding: 15px;
@@ -110,17 +122,13 @@
     margin-left: 6px;
   }
   
-
-/* ============================
-  Hover: pequeño movimiento
-  ============================ */
+/*Hover: pequeño movimiento al pasar el mouse */
 #sidebar button:hover {
  /* se mueve 5px hacia la derecha */
  transform: translateX(5px);
- /* opcional: oscurece ligeramente el fondo al pasar el mouse */
+ /* oscurece ligeramente el fondo al pasar el mouse */
  background-color: #0066aa;
 }
-
 
 
   /* Wrapper & Content */
@@ -137,7 +145,8 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
   
-  /* Forms */
+
+  /* Formularios */
   form {
     display: flex;
     flex-direction: column;
@@ -171,6 +180,41 @@
     cursor: pointer;
   }
   
+
+
+/* === Formulario de búsqueda sobre el mapa === */
+.map-search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+.map-search label {
+  font-weight: bold;
+}
+.map-search input {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.map-search button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #004466;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.map-search button:hover {
+  background-color: #005599;
+}
+
+
+
+
   /* Tables */
   table {
     width: 100%;
@@ -183,8 +227,7 @@
     text-align: left;
   }
   
-  /* Footer sticky */
-
+  /* Footer estatico */
   footer {
     position: fixed;      /* Fija el footer en la ventana */
     left: 0;
@@ -200,20 +243,7 @@
 
 
 
-
-
-  /*footer {
-    text-align: center;
-    padding: 10px;
-    background: #004466;
-    color: #fff;
-    flex-shrink: 0;
-  } */
-  
-
-
-
-  /* Messages */
+  /* Mensajes de advertencias */
   .error { color: red; margin: 10px 0; }
   .msg   { color: green; margin: 10px 0; }
   

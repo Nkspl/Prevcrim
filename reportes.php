@@ -13,6 +13,11 @@ $delincuentes = $stmt->fetchAll();
 <div class="wrapper">
   <div class="content">
     <h2>Listado de Delincuentes (Alfabético)</h2>
+    <h3 id="sub_tit_ing_list_del">Búsqueda</h3>
+    <form method="get" action="buscar.php">
+      <input id="ing_list_del" type="text" name="q" placeholder="Buscar..." required> 
+      <button id="btn_ing_list_del" type="submit">Buscar</button>
+    </form>
     <table>
       <thead>
         <tr><th>RUT</th><th>Nombre</th><th>Estado</th></tr>
@@ -27,11 +32,7 @@ $delincuentes = $stmt->fetchAll();
         <?php endforeach; ?>
       </tbody>
     </table>
-    <h3>Búsqueda</h3>
-    <form method="get" action="buscar.php">
-      <input type="text" name="q" placeholder="Buscar..." required>
-      <button type="submit">Buscar</button>
-    </form>
+
   </div>
   <?php include('inc/footer.php'); ?>
 </div>

@@ -53,4 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('sidebar').classList.toggle('hidden');
     });
   }
+
+// Avisar al usuario con un mensaje informativo en caso de que le de al boton sin rellenar el formulario en reportes
+const input = document.getElementById("ing_list_del");
+
+input.addEventListener("invalid", (event) => {
+  input.setCustomValidity("Por favor, rellenar el campo.");
+});
+
+input.addEventListener("input", (event) => {
+  input.setCustomValidity("");
+});
+
+
+
 });

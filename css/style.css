@@ -249,3 +249,28 @@
   
 
 
+
+   /* Orden de label e input de la lista de reportes de archivo:reportes.php */
+#sub_tit_ing_list_del{
+margin-top: 3%;
+margin-bottom: -3.5%;
+
+}
+
+#ing_list_del{
+  width: 33%;
+  margin-top: 4%;
+  height: 30px;
+}
+
+#btn_ing_list_del {
+width: 5%;
+margin-left: 34%;
+margin-top: -2.5%;
+height: 32px;
+padding-top: 8px;
+background-color: #004466;
+ cursor: pointer;
+transition: background-color 0.2s ease;
+
+}

@@ -27,8 +27,10 @@
     <?php if (!empty($_SESSION['nombre'])): ?>
        <!-- mostrar el nombre del usuario que inicio sesion en el encabezado-->
       <?php echo htmlspecialchars($_SESSION['nombre']); ?> 
-      <a href="logout.php" class="logout-btn">
+
+      <a href="/logout.php" class="logout-btn">
         <i class="fa-solid fa-right-from-bracket"></i>
+
         <span class="logout-text">Cerrar Sesión</span>
       </a>
     <?php endif; ?>

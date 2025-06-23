@@ -54,40 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Autocompletar coordenadas usando Nominatim
-  const lugarInput = document.getElementById('ultimo_lugar');
-  const latInput = document.getElementById('latitud');
-  const lonInput = document.getElementById('longitud');
-  if (lugarInput && latInput && lonInput) {
-    lugarInput.addEventListener('blur', () => {
-      const query = lugarInput.value.trim();
-      if (!query) return;
-      const url =
-        `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(query)}`;
-      fetch(url, { headers: { 'User-Agent': 'prevcrim-app' } })
-        .then(r => r.json())
-        .then(data => {
-          if (data.length) {
-            latInput.value = data[0].lat;
-            lonInput.value = data[0].lon;
-          }
-        })
-        .catch(err => {
-          console.error('Geocoding error', err);
-        });
-    });
-  }
 
-// Avisar al usuario con un mensaje informativo en caso de que le de al boton sin rellenar el formulario en reportes
-const input = document.getElementById("ing_list_del");
+if (searchInput) {
+  searchInput.addEventListener("invalid", () => {
+    searchInput.setCustomValidity("Por favor, rellenar el campo.");
+  });
 
-input.addEventListener("invalid", (event) => {
-  input.setCustomValidity("Por favor, rellenar el campo.");
-});
-
-input.addEventListener("input", (event) => {
-  input.setCustomValidity("");
-});
+  searchInput.addEventListener("input", () => {
+    searchInput.setCustomValidity("");
+  });
+}
 
 
 

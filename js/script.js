@@ -54,11 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-// Avisar al usuario con un mensaje informativo en caso de que presione el
-// botón de búsqueda sin rellenar el formulario en reportes. El elemento solo
-// existe en reportes.php, por lo que verificamos su presencia antes de añadir
-// los listeners para evitar errores en otras páginas.
-const searchInput = document.getElementById("ing_list_del");
 
 if (searchInput) {
   searchInput.addEventListener("invalid", () => {

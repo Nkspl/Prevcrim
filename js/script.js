@@ -54,16 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-// Avisar al usuario con un mensaje informativo en caso de que le de al boton sin rellenar el formulario en reportes
-const input = document.getElementById("ing_list_del");
+// Avisar al usuario con un mensaje informativo en caso de que presione el
+// botón de búsqueda sin rellenar el formulario en reportes. El elemento solo
+// existe en reportes.php, por lo que verificamos su presencia antes de añadir
+// los listeners para evitar errores en otras páginas.
+const searchInput = document.getElementById("ing_list_del");
 
-input.addEventListener("invalid", (event) => {
-  input.setCustomValidity("Por favor, rellenar el campo.");
-});
+if (searchInput) {
+  searchInput.addEventListener("invalid", () => {
+    searchInput.setCustomValidity("Por favor, rellenar el campo.");
+  });
 
-input.addEventListener("input", (event) => {
-  input.setCustomValidity("");
-});
+  searchInput.addEventListener("input", () => {
+    searchInput.setCustomValidity("");
+  });
+}
 
 
 
